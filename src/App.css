@@ -24,7 +24,6 @@
     display: flex;
     gap: 10px;
     margin: 10px 0;
-    position: relative;
 
     & input {
       padding: 10px;
@@ -34,12 +33,6 @@
       border-radius:8px;
     }
 
-    .icon {
-      position: absolute;
-      top: 10px;
-      right: 135px;
-      font-size: 1.2rem;
-    }
 
     & button {
       font-family: inter;
@@ -79,18 +72,6 @@
   .container {
     width: auto;
     margin: 100px 20px;
-
-    .input-section {
-      position: relative;
-  
-
-      .icon {
-        position: absolute;
-        right: 105px;
-      }
-  
-  
-    }
   
   }
 }

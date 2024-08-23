@@ -38,8 +38,7 @@ function App() {
             value={todoVal}
             placeholder="Enter Todo"
           />
-          <CiSearch className="icon" />
-          <button onClick={handleClick}>Search</button>
+          <button onClick={handleClick}>Add</button>
         </div>
 
         {userData.map((item, index) => (
