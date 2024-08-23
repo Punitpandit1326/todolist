@@ -31,7 +31,7 @@
       width: 250px;
       height: 35px;
       border: none;
-      border-radius: 10px;
+      border-radius:8px;
     }
 
     .icon {
@@ -47,7 +47,7 @@
       height: 35px;
       border: none;
       color: #ddd;
-      border-radius: 10px;
+      border-radius: 8px;
       background: #6a8ff3;
     }
   }
@@ -79,5 +79,18 @@
   .container {
     width: auto;
     margin: 100px 20px;
+
+    .input-section {
+      position: relative;
+  
+
+      .icon {
+        position: absolute;
+        right: 105px;
+      }
+  
+  
+    }
+  
   }
 }
