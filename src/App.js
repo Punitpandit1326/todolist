@@ -1,24 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState } from "react";
+import { CiSearch } from "react-icons/ci";
+import { MdOutlineDelete } from "react-icons/md";
 
 function App() {
+  const [todoVal, setTodoVal] = useState();
+  const [userData, setUserData] = useState([]);
+
+  const getData = (e) => {
+    setTodoVal(e.target.value);
+    // console.log(e.target.value);
+  };
+  const handleClick = () => {
+    if (todoVal.trim() === "") {
+      alert("Please enter a valid value.");
+    } else {
+      let dataStore = [...userData, todoVal];
+      setUserData(dataStore);
+      setTodoVal("");
+    }
+  };
+
+  const deleteTodo = (index) => {
+    let updatedTodos = [...userData];
+    updatedTodos.splice(index, 1);
+    setUserData(updatedTodos);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <div className="container">
+        <h1>Todo List</h1>
+        <div className="input-section">
+          <input
+            type="text"
+            onChange={getData}
+            value={todoVal}
+            placeholder="Enter Todo"
+          />
+          <CiSearch className="icon" />
+          <button onClick={handleClick}>Search</button>
+        </div>
+
+        {userData.map((item, index) => (
+          <div className="user_data" key={index}>
+            <h6>{item}</h6>
+            <span onClick={() => deleteTodo(index)}>
+              {" "}
+              <MdOutlineDelete />{" "}
+            </span>
+          </div>
+        ))}
+      </div>
+    </React.Fragment>
   );
 }
 
