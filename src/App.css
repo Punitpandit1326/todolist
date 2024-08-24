@@ -8,7 +8,7 @@
 
 .container {
   padding: 20px;
-  margin-top: 200px;
+  margin: 100px auto;
   width: 400px;
   height: auto;
   border-radius: 5px;
@@ -16,39 +16,51 @@
   background-color: #d9d9d9;
 
   & h1 {
+    font-size: 1.4rem;
     font-family: inter;
-    margin: 0 auto;
+    margin: 0;
+  }
+
+  .dark_span {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #d9d9d9;
+    background: #6a8ff3;
+    padding: 10px;
   }
 
   .input-section {
     display: flex;
     gap: 10px;
-    margin: 10px 0;
+    margin: 30px 0;
 
     & input {
       padding: 10px;
       width: 250px;
       height: 35px;
       border: none;
-      border-radius:8px;
+      border-radius: 5px;
     }
-
 
     & button {
       font-family: inter;
       width: 120px;
-      height: 35px;
+      height: 38px;
       border: none;
       color: #ddd;
-      border-radius: 8px;
+      border-radius: 5px;
+      padding: 0;
       background: #6a8ff3;
     }
   }
 
   .user_data {
+    border-radius: 5px;
     display: flex;
     justify-content: space-between;
-    margin: 15px 10px;
+    margin: 15px 0;
 
     & h6 {
       font-size: 1rem;
@@ -58,6 +70,14 @@
 
     & span {
       cursor: pointer;
+      color: rgb(51, 70, 245);
+      font-size: 1.3rem;
+      font-weight: 500;
+      font-family: inter;
+    }
+
+    & span:last-child {
+      cursor: pointer;
       color: rgb(245, 51, 51);
       font-size: 1.3rem;
       font-weight: 500;
@@ -66,12 +86,148 @@
   }
 }
 
+.bgcontainer {
+  padding: 20px;
+  margin: 100px auto;
+  width: 400px;
+  height: auto;
+  border-radius: 5px;
+  border: 1px solid #988;
+  background-color: #2b2929;
+
+  & h1 {
+    font-size: 1.4rem;
+    font-family: inter;
+    margin: 0;
+  }
+
+  .dark_span {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #d9d9d9;
+    background: #6a8ff3;
+    padding: 10px;
+  }
+
+  .input-section {
+    display: flex;
+    gap: 10px;
+    margin: 30px 0;
+
+    & input {
+      padding: 10px;
+      width: 250px;
+      height: 35px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    & button {
+      font-family: inter;
+      width: 120px;
+      height: 38px;
+      border: none;
+      color: #ddd;
+      border-radius: 5px;
+      padding: 0;
+      background: #6a8ff3;
+    }
+  }
+
+  .user_data {
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+
+    & h6 {
+      font-size: 1rem;
+      font-weight: 500;
+      font-family: inter;
+    }
+
+    & span {
+      cursor: pointer;
+      color: rgb(51, 70, 245);
+      font-size: 1.3rem;
+      font-weight: 500;
+      font-family: inter;
+    }
+
+    & span:last-child {
+      cursor: pointer;
+      color: rgb(245, 51, 51);
+      font-size: 1.3rem;
+      font-weight: 500;
+      font-family: inter;
+    }
+  }
+}
+
+/* App.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #ebdede;
+}
+
+.container {
+  padding: 20px;
+}
+
+.input-section input {
+  padding: 10px;
+  font-size: 16px;
+}
+
+
+.user_data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.dark-mode .user_data {
+  border-color: #444;
+}
+
+.toggle-btn {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.toggle-btn:hover {
+  background-color: #eee;
+}
+
+.dark-mode .toggle-btn:hover {
+  background-color: #201f1f;
+}
+
 /* --------media-queries----------- */
 
 @media screen and (max-width: 568px) {
-  .container {
+  .container,
+  .bgcontainer {
     width: auto;
     margin: 100px 20px;
-  
+  }
+
+  .input-section button {
+    width: auto;
+    padding: 10px;
   }
 }
